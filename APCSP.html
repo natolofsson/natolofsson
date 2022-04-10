@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+body {
+  background-color: green;
+  text-align: center;
+  color: white;
+  font-family: Arial;
+}
+
+
+<p> This program outputs the text below into a textbox. </p>
+
+<textarea id= "inputText" rows= "4" cols= "50">
+Put text here.
+</textarea>
+
+<p>Click the button to see the frequency of each word.</p>
+
+<button onclick="wordFrequency()" >Get word count!< /button>
+
+<p id="demo"></p>
+
+<script src="wordcount.js"> </script>
+
+</body>
+</html>
+
+
+
+
+function wordFrequency() {
+
+   var wordmap = new Map();
+    var i; // for loop
+    var next; // next word listed
+    var wordCount;
+    var uniqueWords;
+    var totalWords;
+
+  Function wordEdit (){
+  // Get words from text box
+    var str = document.getElementById("textinput").value;
+
+    //Remove special characters and replace with spaces
+    var str = str.replace(/[",.)(!]/g," ");
+
+    //Split string into words
+    var wordlist = str.split(/\s+/);
+}
+    //Count words using hashmap
+ 
+ Function mapFreq (){
+   for (i=0;i<wordlist.length;i++){
+	wordEdit();
+	if(wordmap.has(wordlist[i])){
+	    window.alert(wordlist[i]);
+	    next = wordmap.get(wordlist[i]) + 1; // add 1 to frequency of word
+	    wordmap.set(wordlist[i],next);
+	}
+	else{
+	    wordmap.set(wordlist[i],1); // if word is not in list
+	}
+    }
+}
+
+    // Print hashmap in text box
+    var output = ""; 
+    for (var [word, count] of wordmap) {
+	Output+= word + ": " + count  + "<br>";
+    }
+	Output += “Number of unique words: “ + uniqueWords; + “<br>” + 
+	“Total Word Count: “ + totalWords;
+
+    //Print out by text box (using HTML / website)
+
+    document.getElementById("demo").innerHTML = output;
+}
+
+
+
+Algorithm
+  for (i=0;i<wordlist.length;i++){
+
+	wordCount;
+	if(wordmap.has(wordlist[i])){
+	    window.alert(wordlist[i]); // what is this
+	    next = wordmap.get(wordlist[i]) + 1; // add 1 to frequency of word
+	    wordmap.set(wordlist[i],next);
+	}
+	else{
+	    wordmap.set(wordlist[i],1); // if word is not in list
+	}
+
+function wordCount(){
+if (!wordmap.has(wordlist[i])){
+uniqueWords++;
+}
+	totalWords++;
+}
+
+
+
+
+Abstraction
+
+function wordCount(){
+if (!wordmap.has(wordlist[i])){
+uniqueWords++;
+}
+	totalWords++;
+}
